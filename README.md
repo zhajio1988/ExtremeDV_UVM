@@ -26,3 +26,13 @@ ethernet tb is from https://github.com/andres-mancera/ethernet_10ge_mac_SV_UVM_t
 ### run a group of testcases
 `YASAsim -g ethernet_regr`  
 
+## add axi tb
+axi tb is from https://github.com/marcoz001/axi-uvm  
+
+### run a testcase
+` YASAsim -b axi -t axi_sequential_writes_test -seed 1 -w`   
+
+### run a group of testcases
+`YASAsim -g axi_regr` 
+
+
