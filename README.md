@@ -1,6 +1,6 @@
 # ExtremeDV_UVM
 
-## simulator support
+## support simulator
 After `source bin/bootenv.sh`  
 use   
 `export YASA_SIMULATOR=vcs`  
