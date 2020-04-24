@@ -1,5 +1,13 @@
 # ExtremeDV_UVM
 
+## simulator support
+After `source bin/bootenv.sh`  
+use   
+`export YASA_SIMULATOR=vcs`  
+or  
+`export YASA_SIMULATOR=xrun`   
+to change default simulatior
+
 ## add ahb tb
 ahb tb is from https://github.com/mayurkubavat/UVM 
 
@@ -17,3 +25,4 @@ ethernet tb is from https://github.com/andres-mancera/ethernet_10ge_mac_SV_UVM_t
 
 ### run a group of testcases
 `YASAsim -g ethernet_regr`  
+
