@@ -1,4 +1,4 @@
-export YASA_SIMULATOR=xrun
+export YASA_SIMULATOR=vcs
 
 curdir=$(cd $(dirname ${BASH_SOURCE[0]}); cd ..; pwd)
 
