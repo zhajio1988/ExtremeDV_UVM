@@ -6,6 +6,7 @@ export PRJ_HOME=$curdir
 export PRJ_NAME=`basename ${PRJ_HOME}`
 
 export AHB_HOME=$PRJ_HOME/ahb
+export AXI_HOME=$PRJ_HOME/axi
 export ETHERNET_HOME=$PRJ_HOME/ethernet
 
 ### eda tools specified env var ###
