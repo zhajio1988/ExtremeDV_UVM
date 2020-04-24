@@ -14,11 +14,8 @@
 interface xge_mac_interface( input bit  clk_156m25,
                              input bit clk_xgmii_rx,
                              input bit clk_xgmii_tx,
-                             input bit wb_clk_i,
-                             ref logic reset_156m25_n,
-                             ref logic reset_xgmii_rx_n,
-                             ref logic reset_xgmii_tx_n,
-                             ref logic wb_rst_i        );
+                             input bit wb_clk_i
+                             );
 
    logic                               pkt_rx_ren, pkt_tx_eop, pkt_tx_sop, pkt_tx_val;
    logic                               wb_cyc_i, wb_stb_i, wb_we_i, wb_ack_o, wb_int_o;
@@ -27,6 +24,11 @@ interface xge_mac_interface( input bit  clk_156m25,
    logic [31:0]                        wb_dat_i, wb_dat_o;
    logic [7:0]                         wb_adr_i, xgmii_rxc, xgmii_txc;
    logic [2:0]                         pkt_tx_mod, pkt_rx_mod;
+
+   logic                               reset_156m25_n;
+   logic                               reset_xgmii_rx_n;
+   logic                               reset_xgmii_tx_n;
+   logic                               wb_rst_i;
 
    parameter INPUT_SKEW  = 1;
    parameter OUTPUT_SKEW = 1;

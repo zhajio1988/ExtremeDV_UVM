@@ -22,12 +22,6 @@ package ahb_test_pkg;
    import ahb_src_pkg::*;
 
  `include "ahb_base_test.sv"
- `include "ahb_reset_test.sv"
- `include "ahb_incrx_test.sv"
- `include "ahb_wrapx_test.sv"
- `include "ahb_crt_test.sv"
- `include "ahb_incrbusy_test.sv"
- `include "ahb_err_test.sv"
 endpackage
 `endif
 

@@ -16,7 +16,6 @@ import xgmii_test_pkg::*;
 module xge_test_top();
 
    logic         clk_156m25, clk_xgmii_rx, clk_xgmii_tx;
-   logic         reset_156m25_n, reset_xgmii_rx_n, reset_xgmii_tx_n, wb_rst_i;
    logic         pkt_rx_ren, pkt_tx_eop, pkt_tx_sop, pkt_tx_val;
    logic         wb_clk_i, wb_cyc_i, wb_stb_i, wb_we_i;
    logic [63:0]  pkt_tx_data, xgmii_rxd;
@@ -57,11 +56,7 @@ module xge_test_top();
                                       .clk_156m25         (clk_156m25),
                                       .clk_xgmii_rx       (clk_xgmii_rx),
                                       .clk_xgmii_tx       (clk_xgmii_tx),
-                                      .wb_clk_i           (wb_clk_i),
-                                      .reset_156m25_n     (reset_156m25_n),
-                                      .reset_xgmii_rx_n   (reset_xgmii_rx_n),
-                                      .reset_xgmii_tx_n   (reset_xgmii_tx_n),
-                                      .wb_rst_i           (wb_rst_i)
+                                      .wb_clk_i           (wb_clk_i)
                                       );
 
    // Instantiate the xge_mac core DUT
@@ -89,14 +84,14 @@ module xge_test_top();
                              .pkt_tx_mod         (xge_mac_if.pkt_tx_mod),
                              .pkt_tx_sop         (xge_mac_if.pkt_tx_sop),
                              .pkt_tx_val         (xge_mac_if.pkt_tx_val),
-                             .reset_156m25_n     (reset_156m25_n),
-                             .reset_xgmii_rx_n   (reset_xgmii_rx_n),
-                             .reset_xgmii_tx_n   (reset_xgmii_tx_n),
+                             .reset_156m25_n     (xge_mac_if.reset_156m25_n),
+                             .reset_xgmii_rx_n   (xge_mac_if.reset_xgmii_rx_n),
+                             .reset_xgmii_tx_n   (xge_mac_if.reset_xgmii_tx_n),
                              .wb_adr_i           (xge_mac_if.wb_adr_i),
                              .wb_clk_i           (wb_clk_i),
                              .wb_cyc_i           (xge_mac_if.wb_cyc_i),
                              .wb_dat_i           (xge_mac_if.wb_dat_i),
-                             .wb_rst_i           (wb_rst_i),
+                             .wb_rst_i           (xge_mac_if.wb_rst_i),
                              .wb_stb_i           (xge_mac_if.wb_stb_i),
                              .wb_we_i            (xge_mac_if.wb_we_i),
                              .xgmii_rxc          (xge_mac_if.xgmii_rxc),
