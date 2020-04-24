@@ -1,16 +1,19 @@
-export YASA_SIMULATOR=vcs
+export YASA_SIMULATOR=xrun
 
 curdir=$(cd $(dirname ${BASH_SOURCE[0]}); cd ..; pwd)
 
 export PRJ_HOME=$curdir
 export PRJ_NAME=`basename ${PRJ_HOME}`
 
+export AHB_HOME=$PRJ_HOME/ahb
+export ETHERNET_HOME=$PRJ_HOME/ethernet
+
 ### eda tools specified env var ###
 export UVM_HOME="/ic/app/c6/synopsys/vcs-mx/O-2018.09-SP1/etc/uvm-1.2"
 export VCS_HOME="/ic/app/c6/synopsys/vcs-mx/O-2018.09-SP1"
 export VERDI_HOME="/ic/app/c6/synopsys/verdi/Verdi_O-2018.09-SP1"
 
-alias YASAsim="python3 $PRJ_HOME/bin/YASA/yasaTop.py"
+alias  YASAsim="python3 $PRJ_HOME/bin/YASA/yasaTop.py"
 export TEMP_ROOT="$PRJ_HOME/temp"
 
 ### eda tools specified env var ###
